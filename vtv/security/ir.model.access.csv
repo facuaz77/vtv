@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_vtv_recepcion_usuario,"vtv.recepcion,usuario",model_vtv_recepcion,vtv.group_vtv_usuario,1,1,1,1
+access_vtv_auto_usuario,"vtv.auto,usuario",model_vtv_auto,vtv.group_vtv_usuario,1,1,1,1
+access_vtv_resultados_usuario,"vtv.resultados,usuario",model_vtv_resultados,vtv.group_vtv_usuario,1,1,1,1

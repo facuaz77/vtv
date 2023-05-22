@@ -1,0 +1,77 @@
+<odoo>
+    <data>
+        <!--
+                          <record id="object0" model="vtv.vtv">
+                            <field name="name">Object 0</field>
+                            <field name="value">0</field>
+                          </record>
+                
+                          <record id="object1" model="vtv.vtv">
+                            <field name="name">Object 1</field>
+                            <field name="value">10</field>
+                          </record>
+                
+                          <record id="object2" model="vtv.vtv">
+                            <field name="name">Object 2</field>
+                            <field name="value">20</field>
+                          </record>
+                
+                          <record id="object3" model="vtv.vtv">
+                            <field name="name">Object 3</field>
+                            <field name="value">30</field>
+                          </record>
+                
+                          <record id="object4" model="vtv.vtv">
+                            <field name="name">Object 4</field>
+                            <field name="value">40</field>
+                          </record>
+                -->
+
+
+        <record id="recepcion1" model="vtv.recepcion">
+            <field name="name2">388JKL</field>
+            <field name="name">Felipe Reynoso</field>
+            <field name="Nro_de_turno">202</field>
+            <field name="fecha">2023-05-04</field>
+        </record>
+
+        
+
+
+        #-----------------------------------------------------------------------------------------------------------------------------------------
+
+
+        <record id="auto1" model="vtv.auto">
+            <field name="name">388JKL</field>
+            <field name="marca">Renault Clio</field>
+            <field name="modelo">2012</field>
+            <field name="primera_seccion">a</field>
+            <field name="segunda_seccion">a</field>
+            <field name="tercera_seccion">a</field>
+            <field name="descripcion">Excelente</field>
+            <field name="recepcion_id" ref="recepcion1"/>
+        </record>
+
+
+        
+
+
+        #-----------------------------------------------------------------------------------------------------------------------------------------
+
+        
+
+
+        <record id="resultados1" model="vtv.resultados">
+            <field name="name3">388JKL</field>
+            <field name="fecha_De_realizacion" eval="datetime.now()"/>
+            <field name="aprobado">s</field>
+            <field name="resultado2">True</field>
+            <field name="descripcion2">Listo para circular</field>
+            <field name="auto_ids" eval="[(6,0,[ref('auto1')])]"/>
+        </record>
+
+        
+
+
+    </data>
+</odoo>

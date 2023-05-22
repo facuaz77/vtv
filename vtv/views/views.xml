@@ -1,0 +1,371 @@
+<odoo>
+    <data>
+
+
+        <record model="ir.ui.view" id="vtv.recepcion_list_view">
+            <field name="name">vtv.recepcion.view.tree</field>
+            <field name="model">vtv.recepcion</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name2"/>
+                    <field name="name"/>
+                    <field name="Nro_de_turno"/>
+                    <field name="fecha"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!-- Vista Form de recepcion -->
+
+
+        <record id="vtv.recepcion_form_view" model="ir.ui.view">
+            <field name="name">vtv.recepcion.view</field>
+            <field name="model">vtv.recepcion</field>
+            <field name="arch" type="xml">
+                <form string="Formulario de recepcion">
+                    <sheet>
+
+
+                        <div class="oe_title">
+                            <label class="oe_edit_only" for="name" string="Matricula"/>
+                            <h3>
+                                <field name="name2" placeholder="..."/>
+                            </h3>
+
+                        </div>
+
+                        <div class="oe_title">
+                            <label class="oe_edit_only" for="name" string="Nombre del titular"/>
+                            <h3>
+                                <field name="name" placeholder="Nombre del titular"/>
+                            </h3>
+
+                        </div>
+
+
+                        <div class="oe_title">
+                            <label class="oe_edit_only" for="name" string="Fecha del turno"/>
+                            <h3>
+                                <field name="fecha" placeholder="Fecha"/>
+                            </h3>
+                        </div>
+
+                        <div class="oe_title">
+                            <label class="oe_edit_only" for="name" string="Numero del turno"/>
+                            <h3>
+                                <field name="Nro_de_turno" placeholder="Numero"/>
+                            </h3>
+                        </div>
+
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- Vista de Busquedas de Recepcion -->
+
+
+        <record id="vtv_recepcion_view_search" model="ir.ui.view">
+            <field name="name">vtv.recepcion.view.search</field>
+            <field name="model">vtv.recepcion</field>
+            <field name="arch" type="xml">
+                <search string="">
+                    <field name="name2"/>
+                    <field name="name"/>
+                    <field name="Nro_de_turno"/>
+                    <filter name="name2" string="Matricula" context="{'group_by_name2': 'name2'}"/>
+                    <filter name="name" string="Nombre del titular" context="{'group_by_name': 'name'}"/>
+                    <filter name="Nro_de_turno" string="Numero de turno" context="{'group_by_Nro_de_turno': 'Nro_de_turno'}"/>
+
+                </search>
+            </field>
+        </record>
+
+    
+
+
+        #-----------------------------------------------------------------------------------------------------------------------------------------
+
+        <!-- Vista de verificacion de los autos -->
+
+        <record model="ir.ui.view" id="vtv.auto_list_view">
+            <field name="name">vtv.auto.view.tree</field>
+            <field name="model">vtv.auto</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="marca"/>
+                    <field name="modelo"/>
+                    <field name="years"/>
+                    <field name="primera_seccion"/>
+                    <field name="segunda_seccion"/>
+                    <field name="tercera_seccion"/>
+                    <field name="descripcion"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!-- Vista Form de la verificacion Vehicular -->
+
+
+        <record id="vtv.auto_form_view" model="ir.ui.view">
+            <field name="name">vtv.auto.view</field>
+            <field name="model">vtv.auto</field>
+            <field name="arch" type="xml">
+                <form string="Formulario de Verificacion Vehicular">
+                    <sheet>
+
+
+                        <div class="oe_inline">
+                            <label class="oe_edit_only" for="name" string="Matricula"/>
+                            <h3>
+                                <field name="name" placeholder="xxx xxx"/>
+                            </h3>
+
+
+                            <label class="oe_edit_only" for="name" string="Marca"/>
+                            <h3>
+                                <field name="marca" placeholder="Marca del auto"/>
+                            </h3>
+
+
+                            <label class="oe_edit_only" for="name" string="Modelo"/>
+                            <h3>
+                                <field name="modelo" placeholder="Año"/>
+                            </h3>
+
+
+                            <label class="oe_edit_only" for="name" string="Años del auto"/>
+                            <h3>
+                                <field name="years" placeholder="Años"/>
+                            </h3>
+                        </div>
+
+
+                        <separator string="Pruebas del vehiculo en las diferentes secciones"/>
+
+
+                        <div class="oe_inline">
+                            <h3>
+                                <field name="primera_seccion" placeholder="Primera seccion"/>
+                                <field name="segunda_seccion" placeholder="Segunda seccion"/>
+                                <field name="tercera_seccion" placeholder="Tercera seccion"/>
+                            </h3>
+                        </div>
+
+
+                        <separator string="Detalles a dar"/>
+
+                        <h3>
+                            <field name="descripcion" placeholder="Solo si son necesarios"/>
+                        </h3>
+
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- Vista de Busquedas de autos -->
+
+
+        <record id="vtv_auto_view_search" model="ir.ui.view">
+            <field name="name">vtv.auto.view.search</field>
+            <field name="model">vtv.auto</field>
+            <field name="arch" type="xml">
+                <search string="Autos">
+                    <field name="name"/>
+                    <field name="marca"/>
+                    <field name="modelo"/>
+                    <group>
+                        <filter name="group_by_modelo" string="modelo" context="{'group_by_modelo': 'modelo'}"/>
+
+                    </group>
+                </search>
+            </field>
+        </record>
+
+      
+
+        #-------------------------------------------------------------------------------------------------------------------------------------------
+
+        <!-- Vista de Resultados -->
+
+
+        <record model="ir.ui.view" id="vtv.resultados_list_view">
+            <field name="name">vtv.resultados.view.tree</field>
+            <field name="model">vtv.resultados</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name3"/>
+                    <field name="fecha_De_realizacion"/>
+                    <field name="aprobado"/>
+                    <field name="resultado"/>
+                    <field name="resultado2"/>
+                    <field name="descripcion2"/>
+
+                </tree>
+            </field>
+        </record>
+
+
+        <!-- Vista Form de Resultados -->
+
+
+        <record id="vtv.resultados_form_view" model="ir.ui.view">
+            <field name="name">vtv.resultados.view</field>
+            <field name="model">vtv.resultados</field>
+            <field name="arch" type="xml">
+                <form string="Formulario de Verificacion Vehicular">
+                    <sheet>
+
+                        <div class="oe_inline">
+
+                            <label class="oe_edit_only" for="name3" string="Matricula"/>
+
+
+                            <h3>
+                                <field name="name3" placeholder="xxx xxx"/>
+                            </h3>
+
+
+                            <label class="oe_edit_only" for="fecha_De_realizacion" string="Fecha de la realizacion"/>
+
+
+                            <h3>
+                                <field name="fecha_De_realizacion" placeholder="xxx xxx"/>
+                            </h3>
+
+
+                            <label class="oe_inline" for="aprobado" string="¿Esta apto para circular?"/>
+
+
+                            <h3>
+                                <field name="aprobado" placeholder="..."/>
+                            </h3>
+
+
+                            <separator string="Marcar lo que corresponda"/>
+
+
+                            <label class="oe_inline" for="resultado" string="Marcar Si tiene que volver"/>
+
+
+                            <h3>
+                                <field name="resultado"/>
+                            </h3>
+
+
+                            <label class="oe_inline" for="resultado2" string="Marcar SI NO tiene que volver"/>
+
+
+                            <h3>
+                                <field name="resultado2"/>
+                            </h3>
+
+
+                            <separator string="Detalles a dar"/>
+
+                            <h3>
+                                <field name="descripcion2" placeholder="Solo si son necesarios..."/>
+                            </h3>
+
+
+                        </div>
+
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- Vista de Calendario (Para ver las fechas de los resultados)-->
+
+
+        <record model="ir.ui.view" id="vtv.resultados_calendar_view">
+            <field name="name">vtv.resultados.view.calendar</field>
+            <field name="model">vtv.resultados</field>
+            <field name="arch" type="xml">
+                <calendar string="Calendario de Resultados" date_start="fecha_De_realizacion" color="aprobado" mode="month">
+                    <field name="name3"/>
+                    <field name="fecha_De_realizacion"/>
+                    <field name="aprobado"/>
+
+                </calendar>
+            </field>
+        </record>
+
+
+        <!-- Vista de Busquedas de Resultados -->
+
+
+        <record id="vtv_resultados_view_search" model="ir.ui.view">
+            <field name="name">vtv.resultados.view.search</field>
+            <field name="model">vtv.resultados</field>
+            <field name="arch" type="xml">
+                <search string="Resultados">
+                    <field name="name3"/>
+                    <field name="aprobado" widget="selection"/>
+                    <group>
+                        <filter name="group_by_name3" string="Matricula" context="{'group_by_name3': 'name3'}"/>
+
+                    </group>
+                </search>
+            </field>
+        </record>
+
+
+
+        #-------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        <!-- Definicion de Menùs (Definimos las acciones del modelo)-->
+        <!-- actions opening views on models -->
+
+            <record model="ir.actions.act_window" id="vtv.recepcion_action_window"> <field name="name">Recepcion</field>
+            <field name="res_model">vtv.recepcion</field>
+            <field name="view_mode">tree,form</field>
+
+        </record>
+
+        <record model="ir.actions.act_window" id="vtv.auto_action_window">
+            <field name="name">Verificacion de Autos</field>
+            <field name="res_model">vtv.auto</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="vtv.resultados_action_window">
+            <field name="name">Resultados</field>
+            <field name="res_model">vtv.resultados</field>
+            <field name="view_mode">tree,form,calendar</field>
+        </record>
+
+
+        <!-- Top menu item -->
+
+        <menuitem name="VTV" id="vtv.menu_root" web_icon="vtv,static/description/icon.png"/>
+
+        <!-- menu categories -->
+
+        <menuitem name="Recepcion" id="vtv.recepcion_menu" parent="vtv.menu_root" action="vtv.recepcion_action_window"/>
+        <menuitem name="Verificacion Vehicular" id="vtv.auto_menu" parent="vtv.menu_root" action="vtv.auto_action_window"/>
+        <menuitem name="Resultados" id="vtv.resultados_menu" parent="vtv.menu_root" action="vtv.resultados_action_window"/>
+
+
+    <!-- actions -->
+        <!--
+                                                                                                                <menuitem name="List" id="vtv.menu_1_list" parent="vtv.menu_1"
+                                                                                                                          action="vtv.action_window"/>
+                                                                                                                <menuitem name="Server to list" id="vtv" parent="vtv.menu_2"
+                                                                                                                          action="vtv.action_server"/>
+                                                                                                            -->
+
+
+    </data>
+</odoo>

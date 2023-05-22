@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+<!--Categoria para los grupos de seguridad -->
+        <record id="vtv_module" model="ir.module.category">
+            <field name="name">vtv</field>
+            <field name="description">Permisos para el administrador</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record id="group_vtv_usuario" model="res.groups">
+            <field name="name">usuario</field>
+            <field name="category_id" ref="vtv_module"/>
+            <field name="comment">Usuario que gestiona todas las secciones</field>
+            <field name="users" eval="[(4, ref('base.user_admin'))]"/>
+            
+
+        </record>
+
+    </data>
+</odoo>
